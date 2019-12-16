@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>titre de la page </title>
+  <link rel="stylesheet" href="../assets/css/stylesElec/styleselec.css">
+  <link rel="stylesheet" href="../assets/css/stylesElec/styleselec_Responsive.css">
+  <link rel="stylesheet" href="../assets/css/Animate2.css">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+</head>
+<body>
+
+    <div id="header">
+        <ul class="Menu">
+            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
+			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
+			<li><a href="sources.html">SOURCES</a></li>
+        </ul>
+    </div>
+
+    <div id="contenue" class="test">
+        <header>
+            <h1>PARTIE ELECTRONIQUE</h1>
+            <h2>Ici est décrit tout ce qu'il faut savoir pour avoir de bonne base élèctronique pour créer votre serre</h2>
+        </header>
+			<div id="box1">
+				<div id="p1">
+					<header class="animated bounceInRight delay-1s">
+                    <h1 class="animated bounceInRight delay-1-5s" >capteur AM2302</h1>
+                </header>
+                <div class="IDParagraph">
+                    <p>avant de commencer a coder nous allons avoir besoin d'un suport informatique qui puisse heberger un site, recuperer les differentes données de nos capteurs, ainsi qu'activer des relais.</p>
+                    <img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/DHT22.png" alt="" />
+					<p>mon premier capteur est un AM2302 capteur d'humidité et de température :</p>								
+					<p>avec son cablage :</p>								
+					<span><img class="image2" src="../assets/images/DHT22_cablage.jpg" alt="" /></span>
+					<p>code qui recupere les donner du capteur hygrometrique et les envoie sur le serveur MySQL :</p>
+					<p>lien pour telecharger la library <a href="https://github.com/adafruit/Adafruit_Python_DHT" target="_blank"> adafruit </a> </p>
+					<p> et MySQLdb avec la commande : <code>apt-get install python-mysqldb</code></p>
+					<pre><code>import Adafruit_DHT
+import MySQLdb
+
+sensor = Adafruit_DHT.DHT22
+
+
+pin = 21
+
+
+humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+
+
+if humidity is not None and temperature is not None:
+    print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+
+	
+else:
+    print('Echec de lecture. Essayez encore!')
+	
+bdd = MySQLdb.connect(host="localhost",user="root",passwd="root",db="serre")  # remplacer les xxx et yyy par votre login et mdp mysql
+req = bdd.cursor()
+#envoi à la base de donnée
+try:
+	req.execute("""insert into `test` (`Température`,`Humidité`) values (%s,%s)""",(temperature,humidity))
+	print('envoie terminer !')
+	bdd.commit()
+except:
+	bdd.rollback()
+	#fermeture de la connexion
+bdd.close()</code></pre>
+                    <br>
+                    <hr>
+                </div>
+				</div>
+				<div id="p2">
+					<header class="animated bounceInRight delay-1s">
+                    <h1 class="animated bounceInRight delay-2s" >Les Relais</h1>
+                </header>
+                <div class="IDParagraph">
+				<img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/relai2.png" alt="" />
+                    <p>pour povoir afficher nos donnees partout dans le monde nous allons cree un serveur http via apache2 sur nore raspberry :</p>
+                    <p>pour arroser,eclairer, ventiler ou bien rechaufer nos jolies plantes, nous allons utiliser un relai c'est un<br> interupteur commander electroniquement. </p>								
+								<p>avec les branchemants suivant pour chaques objets: <p>
+								<img class="image2" src="../assets/images/cablage_relai.png" alt="" />
+								<p>apres avoir brancher notre relai sur la raspberry nous allons faire un petit programme en python pour<br> allumer ou eteindre ce relais : </p>
+								<br>
+                                <pre><code>#! /usr/bin/python
+import RPi.GPIO as GPIO ## Import GPIO library
+GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+GPIO.setup(7, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+GPIO.output(7,False) ## Turn on GPIO pin 7</code></pre>
+								<p> et remplacer le <code>False</code> par un <code>True</code> pour pouvoir etteindre le relai</p>
+								<p><a href="https://blog.bandinelli.net/index.php?post/2015/07/18/Raspberry-Pi%2C-un-relai%2C-quelques-branchements-%3A-interrupteur-intelligent" target="_blank"> petit blog avec pas mal de petites fonction  </a> </p>
+								<p>tout ce si est bien beau mais maintenant commant allons nous interagire avec lui par notre page web ? </p>
+								<p>je vous laisse donc la magnifique site ainsi que sa video de notre cher Tommy Desrochers <a href="https://tommydesrochers.com/tutoriel-controle-des-gpio-du-raspberry-pi-a-partir-dune-page-web/" target="_blank">sur le sujet </a></p>
+								ainsi que mon code personelle : (j'ai juste mis le tout dans un tableau) 
+								
+								<pre><code>
+&#8249;td>lumieres&#8249;/td>
+&#8249;form action="lumieres.php" method="post">
+&#8249;td>&#8249;input type="submit" name="executer" value="ON" class="button primary" id="ON">&#8249;/td>
+&#8249;td>&#8249;input type="submit" name="executer" value="OFF" class="button primary" id="OFF">&#8249;/td>
+&#8249;/form>
+&#8249;/tr > </code></pre>
+                </div>
+				</div>
+			</div>
+		
+		
+		</div>
+	<nav id="sideBar" class="sideBar">
+		<div id="search" >
+			<form method="post" action="#">
+                <input type="text" placeholder="Search" />
+			</form>
+			
+		</div>
+		<header>
+                <h2>Menu</h2>
+        </header>
+        <ul class="ul-sidebar">
+            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
+			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
+			<li><a href="sources.html">SOURCES</a></li>
+		</ul>
+		<img class="MenuIcon" src="../assets/images/menu2.png" alt="" onclick="document.getElementsByClassName('sideBar')[0].classList.toggle('collapsed')"/>
+
+        <hr>
+        <div id="contact">
+			<h2>Contact</h2>
+			<table>
+				<tr>
+					<td><img class="taille" src="../assets/images/mailb.png" alt=""/></td>
+					<td>21910074@etu.unicaen.fr</td>
+				</tr>
+				<tr>
+					<td><img class="taille" src="../assets/images/telephoneb.png" alt=""/></td>
+					<td>+33(0)6-32-46-51-98</td>
+				</tr>
+				<tr>
+					<td><img class="taille" src="../assets/images/adresseb.png" alt=""/></td>
+					<td>10b rue de la grace de dieu<br>14123, fleury-sur-orne</td>
+				</tr>
+			</table>
+		</div>
+        <footer>
+			<p>&copy; 2019. All rights reserved. Design by lerivray Victor.</p>
+		</footer>
+	</nav>
+</body>
+</html>

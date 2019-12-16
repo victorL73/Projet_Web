@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>titre de la page </title>
+  <link rel="stylesheet" href="../assets/css/stylesInfo/stylesinfo.css">
+  <link rel="stylesheet" href="../assets/css/stylesInfo/stylesinfo_Responsive.css">
+  <link rel="stylesheet" href="../assets/css/Animate2.css">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png" />
+</head>
+<body>
+
+    <div id="header">
+        <ul class="Menu">
+            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
+			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
+			<li><a href="sources.html">SOURCES</a></li>
+        </ul>
+    </div>
+
+    <div id="contenue" class="test">
+        <header>
+            <h1>PARTIE INFORMATIQUE</h1>
+            <h2>Ici est décrit tout ce qu'il faut savoir pour avoir de bonne base informatique pour créer votre serre</h2>
+        </header>
+			<div id="box1">
+				<div id="p1">
+					<header  class="animated bounceInRight delay-1s">
+						<h1 class="animated bounceInRight delay-1-5s" >une base informatique</h1>
+					</header>
+					<img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/raspberry.png" alt="" />
+				    <p>Avant de commencer a coder nous allons avoir besoin d'un suport informatique qui puisse heberger un site, recuperer les differentes données de nos capteurs, ainsi qu'activer des relais. Nous allons donc utiliser le nano-ordinateur monocarte Raspberry Pi avec son systeme d'exploitation Raspbian.</p>
+					<br>
+					<hr>
+				</div>
+				<div id="p2">
+					<header class="animated bounceInRight delay-1s">
+						<h1 class="animated bounceInRight delay-2s" >serveur apache2</h1>
+					</header>
+					<img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/apache2.png" alt="" />
+					<p>pour povoir afficher nos donnees partout dans le monde nous allons cree un serveur http via apache2 sur nore raspberry :</p>
+                    <p>pour cela ouvrer le terminal et telecharger apache2 via la commande :<code>apt-get install apache2</code></p>
+                    <p>et voila votre site est operationel dans le registre :<code>/var/www/html</code></p>
+                    
+                    <br>
+                    <hr>
+				</div>
+				<div id="p3">
+					<header class="animated bounceInRight delay-1s">
+                    <h1 class="animated bounceInRight delay-2-5s" >serveur Mysql</h1>
+                </header>
+                <div class="IDParagraph">
+                    <img class="imageArticle animated bounceInRight delay-2-5s" src="../assets/images/Mysql.png" alt="" />
+                    <p>pour pouvoir stoquer, traiter et afficher nos données nous allons crée une BDD (Base De Données) </p>
+                    <p>pour commencer nous allons telecharger plusieurs choses grace a la commande <code>apt-get install :</code></p>
+					<ul>
+						<li>mysql-server</li>
+						<li>phpmyadmin</li>
+						<li>php</li>
+					</ul>
+					<p>maintenant vous pouver vous connecter a votre serveur via votre navigateur en tapant <code>http://localhost/phpmyadmin/</code> ou <code>http://votreip/phpmyadmin/</code> si vous etes pas directement sur la raspberry</p>
+					<p>vous etes donc sur la page d'administration de phpmyadmin, connecter vous avec vos identifiants</p>
+					<p>puis cree votre BDD ainsi que votre table avec le nom de vos données</p>
+					<p>votre BDD est donc finit et prete a etre exploitée</p>
+                    <br>
+                    <hr>
+                </div>
+				</div>
+			</div>
+		
+		<div id="box2">
+			<div id="p21">
+				<header class="animated bounceInRight delay-1-5s">
+                    <h1 class="animated bounceInRight delay-3s" >automatisation</h1>
+                </header>
+                <div class="IDParagraph">
+                    <img class="imageArticle animated bounceInRight delay-3s" src="../assets/images/automat.png" alt="" />
+					<p>pour avoir une mise a joure reguliere de données il faut automatiser le lancement des scripts des <a href="../html/elec.html">differents capteurs ou relais</a></p>
+					<p>nous allons donc taper la commande <code>crontab -e</code>pour acceder au crontab (parametre pour lancer des programes avec une recurence)</p>
+					<p>et placer le code suivant pour l'executer toutes les heurs </p>
+					<pre><code>0 */1 * * * python3  /home/pi/Documents/code_envoie_BDD_DHT22_capteur.py</code></pre>
+					<p>pour executer le scripte de recuperation des données du capteur DHT22 toutes les heurs ou bien :</p>
+					<pre><code>0 7 * * * python3  /home/pi/Documents/relais/lumiere/lumieres_on.py</code></pre>
+					<p> pour allumer (ou eteindre) la lumiere toutes les jours a 7h </p>
+					<p>( <a href="https://www.domo-blog.fr/editer-la-crontab-du-raspberry/" target="_blank">ici pour avoir plus de documentation sur crontab</a>)</p>
+
+                    <hr>
+                </div>
+			</div>
+			<div id="p22">
+				<header class="animated bounceInRight delay-1-5s">
+                    <h1 class="animated bounceInRight delay-3-5s" >sécurisation de l'accès <br>à la gestion</h1>
+                </header>
+                <div class="IDParagraph">
+                    <img class="imageArticle animated bounceInRight delay-3-5s" src="../assets/images/securite.png" alt="" />
+					<p>tout ca est bien beau mais pour ne pas que tout le monde puisse jouer avec votre serre nous allons mettre un mot de passe. pour se faire nous allons ajouter un <code> &#8249;form&#8250; </code>avec un espace pour mettre le mdp ainci qu'un bouton pour valider : </p>
+								<pre><code>&#8249;form action="secret.php" method="post"&#8250;
+&#8249;p&#8250;
+&#8249;input type="password" name="mot_de_passe" /&#8250;
+&#8249;input type="submit" value="Valider" /&#8250;
+&#8249;/p&#8250;
+&#8249;/form&#8250; </code></pre>
+<p>ce programe redirige vers un programe secondaire "secret.php" qui contien la verrification du mot de passe </p>
+
+								<pre><code>&#8249;!DOCTYPE html&#8250;
+&#8249;html&#8250;
+	&#8249;head&#8250;
+		&#8249;title&#8250;Serre autonome By Victor Lerivray&#8249;/title&#8250;
+		&#8249;meta charset="utf-8" /&#8250;
+		&#8249;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /&#8250;
+		&#8249;link rel="stylesheet" href="assets/css/main.css" /&#8250;
+		&#8249;noscript&#8250;&#8249;link rel="stylesheet" href="assets/css/noscript.css" /&#8250;&#8249;/noscript&#8250;
+	&#8249;/head&#8250;
+	&#8249;body class="is-preload"&#8250;
+    
+        &#8249;?php
+    if (isset($_POST['mot_de_passe']) AND $_POST['mot_de_passe'] ==  "tonmotdepasse") // Si le mot de passe est bon
+    {
+    // On affiche les codes
+    ?&#8250;
+        &#8249;h1&#8250;clic ici pour acceder au site &#8249;/h1&#8250;
+		&#8249;li&#8250;&#8249;a href="index.php#TB" class="button primary"&#8250;site !&#8249;/a&#8250;&#8249;/li&#8250;
+        &#8249;?php
+    }
+    else // Sinon, on affiche un message d'erreur
+    {
+        echo '&#8249;p&#8250;Mot de passe incorrect&#8249;/p&#8250;';
+    }
+    ?&#8250;
+    
+        
+    &#8249;/body&#8250;
+&#8249;/html&#8250;
+							</code></pre>
+                </div>
+            </div>
+			</div>
+		</div>
+	<nav id="sideBar" class="sideBar">
+		<div id="search" >
+			<form method="post" action="#">
+                <input type="text" placeholder="Search" />
+			</form>
+			
+		</div>
+		<header>
+                <h2>Menu</h2>
+        </header>
+        <ul class="ul-sidebar">
+            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
+			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
+			<li><a href="sources.html">SOURCES</a></li>
+		</ul>
+		<img class="MenuIcon" src="../assets/images/menu2.png" alt="" onclick="document.getElementsByClassName('sideBar')[0].classList.toggle('collapsed')"/>
+
+        <hr>
+        <div id="contact">
+			<h2>Contact</h2>
+			<table>
+				<tr>
+					<td><img class="taille" src="../assets/images/mailb.png" alt=""/></td>
+					<td>21910074@etu.unicaen.fr</td>
+				</tr>
+				<tr>
+					<td><img class="taille" src="../assets/images/telephoneb.png" alt=""/></td>
+					<td>+33(0)6-32-46-51-98</td>
+				</tr>
+				<tr>
+					<td><img class="taille" src="../assets/images/adresseb.png" alt=""/></td>
+					<td>10b rue de la grace de dieu<br>14123, fleury-sur-orne</td>
+				</tr>
+			</table>
+		</div>
+        <footer>
+			<p>&copy; 2019. All rights reserved. Design by lerivray Victor.</p>
+		</footer>
+	</nav>
+</body>
+</html>

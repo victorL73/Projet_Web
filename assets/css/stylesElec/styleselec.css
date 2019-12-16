@@ -1,0 +1,214 @@
+    /* polices d'écriture*/
+@font-face {
+font-family: 'fa-brands-400';
+src: url('../assets/webfonts/fa-brands-400.eot') format('eot'),
+     url('../assets/webfonts/fa-brands-400.woff') format('woff'),
+     url('../assets/webfonts/fa-brands-400.woff2') format('woff2'),
+     url('../assets/webfonts/fa-brands-400.ttf') format('ttf'),
+     url('../assets/webfonts/fa-brands-400.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+/******class*********/
+ul.Menu {
+	padding-top: 3%;
+	cursor: default;
+	list-style: none;
+	text-align: center;
+	font-weight: bold;
+}
+	ul.Menu li {
+        position: relative;
+		display: inline-block;
+		padding: 0 1em 0 0;
+    }
+
+	
+
+/******styles*********/ 
+body{
+    font-family:"Roboto Slab", serif;
+    background-image: url("../../images/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/******HEADER*********/ 
+#header{
+	text-align: center;
+	font-size: 100%;
+	color:white;
+}
+    #header h1{
+        position: relative;
+        top: 2em;
+        text-align: center;
+        color: black;
+		font-size: 200%;
+    }
+	#header ul.Menu {
+		
+		padding-top: 3%;
+		cursor: default;
+		list-style: none;
+		text-align: center;
+		font-weight: bold;
+	}
+		#header ul.Menu li {
+			text-align: center;
+			opacity: 0.70;
+			background-color: black;
+			border-radius:10px;
+			position: relative;
+			display: inline-block;
+			padding: 0 1em 0 0;
+		}
+/******sideBar*********/ 
+#sideBar{
+	text-align: left;
+	background-color:black;
+	opacity: 0.70;	
+	border-radius:0px 10px 10px 0;
+	position: absolute;
+	color:white;
+	padding-left:1%;
+	padding-right: 1%;
+	}
+	#sideBar.sideBar {
+		position: absolute;
+			top: 5em;
+			left:-200px;
+		margin-right:-200px;
+		width: 200px;
+		transition: all .25s;
+	}
+		#sideBar.sideBar.collapsed {
+			left: 0;
+		}
+
+	#sideBar input{
+		opacity: 1;
+		margin: 1em 1em 1em 1em;
+		border: 3px solid #333;
+		border-radius: 5px;
+	}
+	#sideBar #contact{
+		opacity: 1;
+		padding-top:40%;
+	}
+	#sideBar footer{
+		padding-top:20%;
+	}
+/******Style menus*********/ 
+#sideBar, #header a{
+	outline: none;
+	text-decoration: none;
+	padding: 2px 1px 0;
+	color: white;
+	
+}
+	#header a{
+		outline: none;
+		text-decoration: none;
+		margin: 2px 1px 0;
+		padding-left:10px;
+	}
+	#sideBar a:visited, a:link {
+		font-weight: normal;
+		color: white;
+	}
+	#sideBar,#header a:focus,a:hover,a:active {
+		border-bottom: 3px solid;
+		border-bottom-color: white;
+		font-weight: bold;
+	}	
+/******Gestion Images*********/ 
+.styleLogo{
+    position: relative;
+        width:100px;
+        height:100px;
+		padding-top:20%
+}
+.taille{
+    width: 15px;
+	height: 15px;
+}
+.MenuIcon{
+	position:absolute;
+		top:10%;
+		left:100%;
+	width:50px;
+    height:50px;
+}
+.imageBox{
+    border-radius:5px;
+    width: 300px;
+    height: 150px; 
+}
+.imageArticle{
+	border-radius:5px;
+    width: 256px;
+	height: 96px;
+}
+/******CONTENUE*********/ 
+#contenue{
+    background-color:white;
+    position: relative;
+        top: 11em;
+		margin-bottom:1em;
+}
+	#contenue h1, h2 {
+        position: static;
+        text-align: center;
+        font-family: "Courier New", serif;
+		font-size :100%;
+    }
+    #contenue h2 {
+		text-transform: normal;
+        color:#646464;
+    }
+    #contenue h1 {
+		text-transform: capitalize;
+        color:#646464;
+    }
+	#contenue a{
+		color: black;
+	}
+	#contenue code {
+		background: #494949;
+		color:white;
+		border-radius: 4px;
+		font-family: "Courier New", monospace;
+		font-size: 0.9rem;
+		margin: 0 0.25rem;
+		padding: 0.25rem 0.65rem;
+	}
+	#contenue pre {
+		font-family: "Courier New", monospace;
+		font-size: 0.9rem;
+		margin: 0 0 2rem 0;
+	}
+		#contenue pre code {
+			text-align:left;
+			display: block;
+			line-height: 1.75;
+			padding: 1rem 1.5rem;
+			overflow-x: auto;
+		}
+	#contenue.IDParagraph a{
+			color: black;
+	}
+	/******BOXS*********/ 
+#box1, #box2{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+	#p1, #p2, #p3, #p21, #p22{
+		flex: 1 1 auto;
+		padding-left: 16em;
+		padding-right: 16em;
+
+	}
