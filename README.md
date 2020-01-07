@@ -21,7 +21,7 @@ vous pourez aussi retrouver les fichiers html et leur css associer :
 
 | fichier html      |     fichier css    |     fichier responsive        |
 | ----------------- | ------------------ | ----------------------------- |
-| `index.html`      | `style.css`        | `styles_Responsive.css`       |
+| `index.html`      | `stylesIndex.css`  | `stylesIndex_Responsive.css`  |
 | `accueil.html`    | `stylesAccueil.css`| `stylesAccueil_Responsive.css`|
 | `elec.html`       | `styleselec.css`   | `styleselec_Responsive.css`   |
 | `info.html`       | `stylesinfo.css`   | `stylesinfo_Responsive.css`   |
