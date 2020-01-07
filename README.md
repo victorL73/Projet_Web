@@ -29,13 +29,13 @@ vous pourez aussi retrouver les fichiers html et leur css associer :
 | `element.html`    | `styleselement.css`| `styleselement_Responsive.css`|
 
 
-ainci que `Animate.css` pour gerer les annimations css.
+ainsi que `Animate.css` pour gerer les annimations css.
 
 vous pouvez aussi trouver le fichier (/html/elements.html) pour modifier plus facilement le site.
 
 ## Accessibilité
 
-ce projet prend en charge le navigateur firefox et google chrome, les utilisateurs peuvent sélectionner "Réduire le mouvement" dans les préférences de leur système d'exploitation. Les transitions CSS seront alors désactivées sans aucun travail supplémentaire.
+ce projet prend en charge le navigateur firefox, google chrome et vivaldi ainsi que les appareils au largeur d'écrant 1024px et 360px, les utilisateurs peuvent sélectionner "Réduire le mouvement" dans les préférences de leur système d'exploitation, Les transitions CSS seront alors désactivées sans aucun travail supplémentaire.
 
 ## License
 
