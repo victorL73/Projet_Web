@@ -13,6 +13,7 @@ passe-temps qui vous tient à cœur, un produit culturel, etc. En réalité, ce 
 des suggestions mais vous avez le champ libre sur le choix du sujet, l’idée étant que vous
 travailliez sur une thématique qui vous intéresse.
 
+Le Projet est disponnible sur GitHub a l'adresse : 	https://github.com/victorL73/Projet_Web
 Le fichier principale est `index.html` est situer a la racine.
 
 vous pourez aussi retrouver les fichiers html et leur css associer : 
