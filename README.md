@@ -20,9 +20,12 @@ vous pourez aussi retrouver les fichiers html et leur css associer :
 | fichier html      |     fichier css    |     fichier responsive        |
 | ----------------- | ------------------ | ----------------------------- |
 | `index.html`      | `style.css`        | `styles_Responsive.css`       |
+| `accueil.html`    | `stylesAccueil.css`| `stylesAccueil_Responsive.css`|
 | `elec.html`       | `styleselec.css`   | `styleselec_Responsive.css`   |
 | `info.html`       | `stylesinfo.css`   | `stylesinfo_Responsive.css`   |
 | `sources.html`    | `stylessources.css`| `stylessources_Responsive.css`|
+| `element.html`    | `styleselement.css`| `styleselement_Responsive.css`|
+
 
 ainci que `Animate.css` pour gerer les annimations css.
 

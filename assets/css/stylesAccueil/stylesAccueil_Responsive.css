@@ -1,0 +1,74 @@
+@media (max-width: 1024px) {
+	body:before {
+			content: "Version Tablette du site";
+			display: block;
+			text-align: center;
+			font-style: italic;
+			color: #777;
+	}
+	#header ul.Menu {
+		
+		padding-top: 1%;
+		cursor: default;
+		list-style: none;
+		text-align: center;
+		font-weight: bold;
+	}
+	#sideBar #contact{
+		opacity: 1;
+		padding-top:20%;
+	}
+	#contenue{
+    background-color:white;
+    position: relative;
+        top: 17em;
+	margin-bottom:11%;
+	padding-bottom:5%;
+        
+}
+ #box3, #box2{
+	margin-top:4%;
+}
+}
+@media (max-width: 360px) {
+	body:before {
+		content: "Version Téléphone du site";
+		display: block;
+		text-align: center;
+		font-style: italic;
+		color: #777;
+}
+	#header ul.Menu {
+		
+		padding-top: 1%;
+		cursor: default;
+		list-style: none;
+		text-align: center;
+		font-weight: bold;
+	}
+		#sideBar #contact{
+		opacity: 1;
+		padding-top:20%;
+	}
+	.imageBox{
+    border-radius:5px;
+    width: 70%;
+    height: 40%; 
+}
+.imageBox3{
+    border-radius:5px;
+    width: 22%;
+    height: 50%;
+}
+#contenue{
+    background-color:white;
+    position: relative;
+        top: 13.5em;
+	margin-bottom:11%;
+	padding-bottom:5%;
+        
+}
+ #box3, #box2{
+	margin-top:4%;
+}	
+}

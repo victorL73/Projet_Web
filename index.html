@@ -1,106 +1,52 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>titre de la page </title>
-  <link rel="stylesheet" href="assets/css/styles/styles.css">
-  <link rel="stylesheet" href="assets/css/styles/styles_Responsive.css">
-  <link rel="stylesheet" href="assets/css/Animate2.css">
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>serreTech</title>
+	  <link rel="stylesheet" media="screen" href="assets/css/index/style.css">
+	  <link rel="stylesheet" media="screen" href="assets/css/index/style_Responsive.css">
 
-    <div id="header">
-        <ul class="Menu">
-            <li><a href="index.html">ACCEUIL</a></li>
-            <li><a href="html/info.html">PARTIE INFORMATIQUE</a></li>
-			<li><a href="html/elec.html">PARTIE ELECTRONIQUE</a></li>
-			<li><a href="html/sources.html">SOURCES</a></li>
-        </ul>
-        <h1>Une Serre connectée <br>
-			by Victor Lerivray</h1>
-        <img class="styleLogo" src="assets/images/logo.png" alt=""/>
-                
-    </div>
-	<nav id="sideBar" class="sideBar">
-		<div id="search" >
-			<form method="post" action="#">
-                <input type="text" placeholder="Search" />
-			</form>
-			
-		</div>
+	</head>
+	<body>
 		<header>
-                <h2>Menu</h2>
-        </header>
-        <ul class="ul-sidebar">
-            <li><a href="index.html">ACCEUIL</a></li>
-            <li><a href="html/info.html">PARTIE INFORMATIQUE</a></li>
-			<li><a href="html/elec.html">PARTIE ELECTRONIQUE</a></li>
-			<li><a href="html/sources.html">SOURCES</a></li>
-		</ul>
-		<img class="MenuIcon" src="assets/images/menu2.png" alt="" onclick="document.getElementsByClassName('sideBar')[0].classList.toggle('collapsed')"/>
+			<div id="div_horloge"></div>
+ 		<div id="Date">
+			<SCRIPT LANGUAGE="JavaScript">
+				var maintenant=new Date();
+				var jour=maintenant.getDate();
+				var mois=maintenant.getMonth()+1;
+				var an=maintenant.getFullYear();
+				document.write(jour,"/",mois,"/",an);
+			</SCRIPT>
+		</div>
+			<script type="text/javascript">
+			window.onload=function() {
+			  horloge('div_horloge');
+			};
+			 
+			function horloge(el) {
+			  if(typeof el=="string") { el = document.getElementById(el); }
+			  function actualiser() {
+				var date = new Date();
+				var str = date.getHours();
+				str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+				str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+				el.innerHTML = str;
+			  }
+			  actualiser();
+			  setInterval(actualiser,1000);
+			}
+			</script>
+		</header>
+		<!-- particles.js container -->
+		<div id="particles-js"></div>
 
-        <hr>
-        <div id="contact">
-			<h2>Contact</h2>
-			<table>
-				<tr>
-					<td><img class="taille" src="assets/images/mailb.png" alt=""/></td>
-					<td>21910074@etu.unicaen.fr</td>
-				</tr>
-				<tr>
-					<td><img class="taille" src="assets/images/telephoneb.png" alt=""/></td>
-					<td>+33(0)6-32-46-51-98</td>
-				</tr>
-				<tr>
-					<td><img class="taille" src="assets/images/adresseb.png" alt=""/></td>
-					<td>10b rue de la grace de dieu<br>14123, fleury-sur-orne</td>
-				</tr>
-			</table>
+		<!-- scripts -->
+		<script src="assets/js/particles.js"></script>
+		<script src="assets/js/app.js"></script>
+		<div id="titre">
+			<a href="html/accueil.html">Bienvenue chez serreTech, <br> Tout pour le naturel</a>
 		</div>
-        <footer>
-			<p>&copy; 2019. All rights reserved. Design by lerivray Victor.</p>
-		</footer>
-	</nav>
-    <div id="contenue">
-        <header>
-            <h1>Raccourcis</h1>
-            <h2>Raccourcis vers les articles du site</h2>
-        </header>
-        <div id="box1" class="animated bounceInRight delay-1s">
-			<div id="p1">
-			<a href="html/info.html#p1"><img class="imageBox" src="assets/images/raspberry.png" alt="" /></a>
-                   <p>une base informatique</p>
-			</div>
-			<div id="p2">
-			<a href="html/info.html#p2"><img class="imageBox" src="assets/images/apache2.png" alt="" /></a>
-                   <p>serveur apache2</p>
-			</div>
-			<div id="p3">
-			<a href="html/info.html#p3"><img class="imageBox" src="assets/images/Mysql.png" alt="" /></a>
-                   <p>serveur Mysql</p>
-			</div>
-		</div>
-		<div id="box2" class="animated bounceInRight delay-1-5s">
-			<div id="p21">
-			<a href="html/info.html#p21"><img class="imageBox" src="assets/images/automat.png" alt="" /></a>
-                   <p>automatisation</p>
-			</div>
-			<div id="p22">
-			<a href="html/info.html#p22"><img class="imageBox" src="assets/images/securite.png" alt="" /></a>
-                   <p>sécurisation de l'accès à la gestion</p>
-			</div>
-			<div id="p23">
-			<a href="html/elec.html#p1"><img class="imageBox" src="assets/images/DHT22.png" alt="" /></a>
-                   <p>capteur AM2302</p>
-			</div>
-		</div>
-		<div id="box3" class="animated bounceInRight delay-2s">
-			<div id="p31">
-			<a href="html/elec.html#p2"><img class="imageBox3" src="assets/images/Relai2.png" alt="" /></a>
-                   <p>Les Relais</p>
-			</div>
-		</div>
-    </div>
-</body>
+
+	</body>
 </html>

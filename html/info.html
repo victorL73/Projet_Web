@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>titre de la page </title>
+  <title>serreTech</title>
   <link rel="stylesheet" href="../assets/css/stylesInfo/stylesinfo.css">
   <link rel="stylesheet" href="../assets/css/stylesInfo/stylesinfo_Responsive.css">
-  <link rel="stylesheet" href="../assets/css/Animate2.css">
+  <link rel="stylesheet" href="../assets/css/Animate.css">
   <link rel="icon" type="image/png" href="../assets/images/logo.png" />
 </head>
 <body>
 
     <div id="header">
         <ul class="Menu">
-            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="accueil.html">ACCUEIL</a></li>
             <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
 			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
 			<li><a href="sources.html">SOURCES</a></li>
@@ -26,19 +26,19 @@
         </header>
 			<div id="box1">
 				<div id="p1">
-					<header  class="animated bounceInRight delay-1s">
-						<h1 class="animated bounceInRight delay-1-5s" >une base informatique</h1>
+					<header>
+						<h1 class="animated bounceInRight delay-0-5s" >une base informatique</h1>
 					</header>
-					<img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/raspberry.png" alt="" />
+					<img class="imageArticle animated bounceInRight delay-0-5s" src="../assets/images/raspberry.png" alt="" />
 				    <p>Avant de commencer a coder nous allons avoir besoin d'un suport informatique qui puisse heberger un site, recuperer les differentes données de nos capteurs, ainsi qu'activer des relais. Nous allons donc utiliser le nano-ordinateur monocarte Raspberry Pi avec son systeme d'exploitation Raspbian.</p>
 					<br>
 					<hr>
 				</div>
 				<div id="p2">
-					<header class="animated bounceInRight delay-1s">
-						<h1 class="animated bounceInRight delay-2s" >serveur apache2</h1>
+					<header>
+						<h1 class="animated bounceInRight delay-1s" >serveur apache2</h1>
 					</header>
-					<img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/apache2.png" alt="" />
+					<img class="imageArticle animated bounceInRight delay-1s" src="../assets/images/apache2.png" alt="" />
 					<p>pour povoir afficher nos donnees partout dans le monde nous allons cree un serveur http via apache2 sur nore raspberry :</p>
                     <p>pour cela ouvrer le terminal et telecharger apache2 via la commande :<code>apt-get install apache2</code></p>
                     <p>et voila votre site est operationel dans le registre :<code>/var/www/html</code></p>
@@ -47,11 +47,11 @@
                     <hr>
 				</div>
 				<div id="p3">
-					<header class="animated bounceInRight delay-1s">
-                    <h1 class="animated bounceInRight delay-2-5s" >serveur Mysql</h1>
+					<header>
+                    <h1 class="animated bounceInRight delay-1-5s" >serveur Mysql</h1>
                 </header>
                 <div class="IDParagraph">
-                    <img class="imageArticle animated bounceInRight delay-2-5s" src="../assets/images/Mysql.png" alt="" />
+                    <img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/Mysql.png" alt="" />
                     <p>pour pouvoir stoquer, traiter et afficher nos données nous allons crée une BDD (Base De Données) </p>
                     <p>pour commencer nous allons telecharger plusieurs choses grace a la commande <code>apt-get install :</code></p>
 					<ul>
@@ -71,11 +71,11 @@
 		
 		<div id="box2">
 			<div id="p21">
-				<header class="animated bounceInRight delay-1-5s">
-                    <h1 class="animated bounceInRight delay-3s" >automatisation</h1>
+				<header>
+                    <h1 class="animated bounceInRight delay-2s" >automatisation</h1>
                 </header>
                 <div class="IDParagraph">
-                    <img class="imageArticle animated bounceInRight delay-3s" src="../assets/images/automat.png" alt="" />
+                    <img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/automat.png" alt="" />
 					<p>pour avoir une mise a joure reguliere de données il faut automatiser le lancement des scripts des <a href="../html/elec.html">differents capteurs ou relais</a></p>
 					<p>nous allons donc taper la commande <code>crontab -e</code>pour acceder au crontab (parametre pour lancer des programes avec une recurence)</p>
 					<p>et placer le code suivant pour l'executer toutes les heurs </p>
@@ -89,11 +89,11 @@
                 </div>
 			</div>
 			<div id="p22">
-				<header class="animated bounceInRight delay-1-5s">
-                    <h1 class="animated bounceInRight delay-3-5s" >sécurisation de l'accès <br>à la gestion</h1>
+				<header>
+                    <h1 class="animated bounceInRight delay-2-5s" >sécurisation de l'accès <br>à la gestion</h1>
                 </header>
                 <div class="IDParagraph">
-                    <img class="imageArticle animated bounceInRight delay-3-5s" src="../assets/images/securite.png" alt="" />
+                    <img class="imageArticle animated bounceInRight delay-2-5s" src="../assets/images/securite.png" alt="" />
 					<p>tout ca est bien beau mais pour ne pas que tout le monde puisse jouer avec votre serre nous allons mettre un mot de passe. pour se faire nous allons ajouter un <code> &#8249;form&#8250; </code>avec un espace pour mettre le mdp ainci qu'un bouton pour valider : </p>
 								<pre><code>&#8249;form action="secret.php" method="post"&#8250;
 &#8249;p&#8250;
@@ -148,7 +148,7 @@
                 <h2>Menu</h2>
         </header>
         <ul class="ul-sidebar">
-            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="../index.html">ACCUEIL</a></li>
             <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
 			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
 			<li><a href="sources.html">SOURCES</a></li>

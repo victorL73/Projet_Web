@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>titre de la page </title>
+  <title>serreTech</title>
   <link rel="stylesheet" href="../assets/css/stylesElec/styleselec.css">
   <link rel="stylesheet" href="../assets/css/stylesElec/styleselec_Responsive.css">
-  <link rel="stylesheet" href="../assets/css/Animate2.css">
+  <link rel="stylesheet" href="../assets/css/Animate.css">
   <link rel="icon" type="image/png" href="../assets/images/logo.png" />
 </head>
 <body>
 
     <div id="header">
         <ul class="Menu">
-            <li><a href="../index.html">ACCEUIL</a></li>
+            <li><a href="accueil.html">ACCUEIL</a></li>
             <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
 			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
 			<li><a href="sources.html">SOURCES</a></li>
@@ -26,13 +26,12 @@
         </header>
 			<div id="box1">
 				<div id="p1">
-					<header class="animated bounceInRight delay-1s">
-                    <h1 class="animated bounceInRight delay-1-5s" >capteur AM2302</h1>
+					<header class="animated bounceInRight delay-0-5s">
+                    <h1>capteur AM2302</h1>
                 </header>
                 <div class="IDParagraph">
-                    <p>avant de commencer a coder nous allons avoir besoin d'un suport informatique qui puisse heberger un site, recuperer les differentes données de nos capteurs, ainsi qu'activer des relais.</p>
-                    <img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/DHT22.png" alt="" />
-					<p>mon premier capteur est un AM2302 capteur d'humidité et de température :</p>								
+                    <img class="imageArticle animated bounceInRight delay-0-5s" src="../assets/images/DHT22.png" alt="" />
+					<p>mon premier capteur est un AM2302 capteur d'humidité et de température.</p>								
 					<p>avec son cablage :</p>								
 					<span><img class="image2" src="../assets/images/DHT22_cablage.jpg" alt="" /></span>
 					<p>code qui recupere les donner du capteur hygrometrique et les envoie sur le serveur MySQL :</p>
@@ -74,10 +73,10 @@ bdd.close()</code></pre>
 				</div>
 				<div id="p2">
 					<header class="animated bounceInRight delay-1s">
-                    <h1 class="animated bounceInRight delay-2s" >Les Relais</h1>
+                    <h1>Les Relais</h1>
                 </header>
                 <div class="IDParagraph">
-				<img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/relai2.png" alt="" />
+				<img class="imageArticle animated bounceInRight delay-1s" src="../assets/images/relai2.png" alt="" />
                     <p>pour povoir afficher nos donnees partout dans le monde nous allons cree un serveur http via apache2 sur nore raspberry :</p>
                     <p>pour arroser,eclairer, ventiler ou bien rechaufer nos jolies plantes, nous allons utiliser un relai c'est un<br> interupteur commander electroniquement. </p>								
 								<p>avec les branchemants suivant pour chaques objets: <p>
