@@ -1,0 +1,41 @@
+@media (max-width: 1024px) {
+	body:before {
+			content: "Version Tablette du site";
+			display: block;
+			text-align: center;
+			font-style: italic;
+			color: white;
+	}
+	#Date{
+		margin-left:88%;
+	}
+	a:visited, a:link {
+
+		position:absolute;
+			left:25%;
+			right:25%;
+		font-size:150%;
+
+	}
+}
+
+@media (max-width: 360px) {
+	body:before {
+		content: "Version Téléphone du site";
+		display: block;
+		text-align: center;
+		font-style: italic;
+		color: #777;
+	}
+	#Date{
+		margin-left:70%;
+	}
+	a:visited, a:link {
+
+		position:absolute;
+			left:2%;
+			right:2%;
+		font-size:150%;
+
+	}
+}
