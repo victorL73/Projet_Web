@@ -1,11 +1,11 @@
     /* polices d'écriture*/
 @font-face {
 font-family: 'fa-brands-400';
-src: url('../assets/webfonts/fa-brands-400.eot') format('eot'),
-     url('../assets/webfonts/fa-brands-400.woff') format('woff'),
-     url('../assets/webfonts/fa-brands-400.woff2') format('woff2'),
-     url('../assets/webfonts/fa-brands-400.ttf') format('ttf'),
-     url('../assets/webfonts/fa-brands-400.svg') format('svg');
+src: url('../../assets/webfonts/fa-brands-400.eot') format('eot'),
+     url('../../assets/webfonts/fa-brands-400.woff') format('woff'),
+     url('../../assets/webfonts/fa-brands-400.woff2') format('woff2'),
+     url('../../assets/webfonts/fa-brands-400.ttf') format('ttf'),
+     url('../../assets/webfonts/fa-brands-400.svg') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -24,21 +24,23 @@ body{
     background-image: url("../../images/background.jpg");
     background-attachment: fixed;
     background-size: cover;
+	cursor: url(../../images/cursor.png) 4 12, auto;
+	/*cursor: url(toto.cur), url(http://www.exemple.org/truc.gif), auto;*/
 }
 
 /******HEADER*********/ 
-#header{
+#NavMenue{
 	text-align: center;
 	font-size: 100%;
 }
-    #header h1{
+    #NavMenue h1{
         position: relative;
         top: 2em;
         text-align: center;
         color: black;
 		font-size: 200%;
     }
-	#header ul.Menu {
+	#NavMenue ul.Menu {
 		
 		padding-top: 3%;
 		cursor: default;
@@ -46,7 +48,7 @@ body{
 		text-align: center;
 		font-weight: bold;
 	}
-		#header ul.Menu li {
+		#NavMenue ul.Menu li {
 			text-align: center;
 			opacity: 0.70;
 			background-color: black;
@@ -92,14 +94,14 @@ body{
 		padding-top:20%;
 	}
 /******Style menus*********/ 
-#sideBar, #header a{
+#sideBar, #NavMenue a{
 	outline: none;
 	text-decoration: none;
 	padding: 2px 1px 0;
 	color: white;
 	
 }
-	#header a{
+	#NavMenue a{
 		outline: none;
 		text-decoration: none;
 		margin: 2px 1px 0;
@@ -109,7 +111,7 @@ body{
 		font-weight: normal;
 		color: white;
 	}
-	#sideBar,#header a:focus,a:hover,a:active {
+	#sideBar,#NavMenue a:focus,a:hover,a:active {
 		border-bottom: 3px solid;
 		border-bottom-color: white;
 		font-weight: bold;

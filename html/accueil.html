@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div id="header">
+    <nav id="NavMenue">
         <ul class="Menu">
             <li><a href="accueil.html">ACCUEIL</a></li>
             <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
@@ -20,14 +20,13 @@
         <h1>Une Serre connectée <br>
 			by Victor Lerivray</h1>
         <img class="styleLogo" src="../assets/images/logo.png" alt=""/>
-    </div>
+    </nav>
 	<nav id="sideBar" class="sideBar">
-		<div id="search" >
+		<section id="search" >
 			<form method="post" action="#">
                 <input type="text" placeholder="Search" />
 			</form>
-			
-		</div>
+		</section>
 		<header>
                 <h2>Menu</h2>
         </header>
@@ -40,7 +39,7 @@
 		<img class="MenuIcon" src="../assets/images/menu2.png" alt="" onclick="document.getElementsByClassName('sideBar')[0].classList.toggle('collapsed')"/>
 
         <hr>
-        <div id="contact">
+        <section id="contact">
 			<h2>Contact</h2>
 			<table>
 				<tr>
@@ -56,50 +55,50 @@
 					<td>10b rue de la grace de dieu<br>14123, fleury-sur-orne</td>
 				</tr>
 			</table>
-		</div>
+		</section>
         <footer>
 			<p>&copy; 2019. All rights reserved. Design by lerivray Victor.</p>
 		</footer>
 	</nav>
-    <div id="contenue">
+    <section id="contenue">
         <header>
             <h1>Raccourcis</h1>
             <h2>Raccourcis vers les articles du site</h2>
         </header>
-        <div id="box1" class="animated bounceInRight delay-1s">
-			<div id="p1">
+        <section id="box1" class="animated bounceInRight delay-1s">
+			<article id="p1">
 			<a href="info.html#p1"><img class="imageBox" src="../assets/images/raspberry.png" alt="" /></a>
                    <p>une base informatique</p>
-			</div>
-			<div id="p2">
+			</article>
+			<article id="p2">
 			<a href="info.html#p2"><img class="imageBox" src="../assets/images/apache2.png" alt="" /></a>
                    <p>serveur apache2</p>
-			</div>
-			<div id="p3">
+			</article>
+			<article id="p3">
 			<a href="info.html#p3"><img class="imageBox" src="../assets/images/Mysql.png" alt="" /></a>
                    <p>serveur Mysql</p>
-			</div>
-		</div>
-		<div id="box2" class="animated bounceInRight delay-1-5s">
-			<div id="p21">
+			</article>
+		</section>
+		<section id="box2" class="animated bounceInRight delay-1-5s">
+			<article id="p21">
 			<a href="info.html#p21"><img class="imageBox" src="../assets/images/automat.png" alt="" /></a>
                    <p>automatisation</p>
-			</div>
-			<div id="p22">
+			</article>
+			<article id="p22">
 			<a href="info.html#p22"><img class="imageBox" src="../assets/images/securite.png" alt="" /></a>
                    <p>sécurisation de l'accès à la gestion</p>
-			</div>
-			<div id="p23">
+			</article>
+			<article id="p23">
 			<a href="elec.html#p1"><img class="imageBox" src="../assets/images/DHT22.png" alt="" /></a>
                    <p>capteur AM2302</p>
-			</div>
-		</div>
-		<div id="box3" class="animated bounceInRight delay-2s">
-			<div id="p31">
+			</article>
+		</section>
+		<section id="box3" class="animated bounceInRight delay-2s">
+			<article id="p31">
 			<a href="elec.html#p2"><img class="imageBox3" src="../assets/images/Relai2.png" alt="" /></a>
                    <p>Les Relais</p>
-			</div>
-		</div>
-    </div>
+			</article>
+		</section>
+    </section>
 </body>
 </html>

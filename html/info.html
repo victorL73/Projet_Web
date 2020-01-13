@@ -10,22 +10,22 @@
 </head>
 <body>
 
-    <div id="header">
+    <nav id="NavMenue">
         <ul class="Menu">
             <li><a href="accueil.html">ACCUEIL</a></li>
             <li><a href="info.html">PARTIE INFORMATIQUE</a></li>
 			<li><a href="elec.html">PARTIE ELECTRONIQUE</a></li>
 			<li><a href="sources.html">SOURCES</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <div id="contenue" class="test">
+    <section id="contenue" class="test">
         <header>
             <h1>PARTIE INFORMATIQUE</h1>
             <h2>Ici est décrit tout ce qu'il faut savoir pour avoir de bonne base informatique pour créer votre serre</h2>
         </header>
-			<div id="box1">
-				<div id="p1">
+			<section id="box1">
+				<article id="p1">
 					<header>
 						<h1 class="animated bounceInRight delay-0-5s" >une base informatique</h1>
 					</header>
@@ -33,8 +33,8 @@
 				    <p>Avant de commencer a coder nous allons avoir besoin d'un suport informatique qui puisse heberger un site, recuperer les differentes données de nos capteurs, ainsi qu'activer des relais. Nous allons donc utiliser le nano-ordinateur monocarte Raspberry Pi avec son systeme d'exploitation Raspbian.</p>
 					<br>
 					<hr>
-				</div>
-				<div id="p2">
+				</article>
+				<article id="p2">
 					<header>
 						<h1 class="animated bounceInRight delay-1s" >serveur apache2</h1>
 					</header>
@@ -45,36 +45,36 @@
                     
                     <br>
                     <hr>
-				</div>
-				<div id="p3">
+				</article>
+				<article id="p3">
 					<header>
                     <h1 class="animated bounceInRight delay-1-5s" >serveur Mysql</h1>
-                </header>
-                <div class="IDParagraph">
-                    <img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/Mysql.png" alt="" />
-                    <p>pour pouvoir stoquer, traiter et afficher nos données nous allons crée une BDD (Base De Données) </p>
-                    <p>pour commencer nous allons telecharger plusieurs choses grace a la commande <code>apt-get install :</code></p>
-					<ul>
-						<li>mysql-server</li>
-						<li>phpmyadmin</li>
-						<li>php</li>
-					</ul>
-					<p>maintenant vous pouver vous connecter a votre serveur via votre navigateur en tapant <code>http://localhost/phpmyadmin/</code> ou <code>http://votreip/phpmyadmin/</code> si vous etes pas directement sur la raspberry</p>
-					<p>vous etes donc sur la page d'administration de phpmyadmin, connecter vous avec vos identifiants</p>
-					<p>puis cree votre BDD ainsi que votre table avec le nom de vos données</p>
-					<p>votre BDD est donc finit et prete a etre exploitée</p>
-                    <br>
-                    <hr>
-                </div>
-				</div>
-			</div>
+					</header>
+					<article class="IDParagraph">
+						<img class="imageArticle animated bounceInRight delay-1-5s" src="../assets/images/Mysql.png" alt="" />
+						<p>pour pouvoir stoquer, traiter et afficher nos données nous allons crée une BDD (Base De Données) </p>
+						<p>pour commencer nous allons telecharger plusieurs choses grace a la commande <code>apt-get install :</code></p>
+						<ul>
+							<li>mysql-server</li>
+							<li>phpmyadmin</li>
+							<li>php</li>
+						</ul>
+						<p>maintenant vous pouver vous connecter a votre serveur via votre navigateur en tapant <code>http://localhost/phpmyadmin/</code> ou <code>http://votreip/phpmyadmin/</code> si vous etes pas directement sur la raspberry</p>
+						<p>vous etes donc sur la page d'administration de phpmyadmin, connecter vous avec vos identifiants</p>
+						<p>puis cree votre BDD ainsi que votre table avec le nom de vos données</p>
+						<p>votre BDD est donc finit et prete a etre exploitée</p>
+						<br>
+						<hr>
+					</article>
+				</article>
+			</section>
 		
-		<div id="box2">
-			<div id="p21">
+		<section id="box2">
+			<article id="p21">
 				<header>
                     <h1 class="animated bounceInRight delay-2s" >automatisation</h1>
                 </header>
-                <div class="IDParagraph">
+                <article class="IDParagraph">
                     <img class="imageArticle animated bounceInRight delay-2s" src="../assets/images/automat.png" alt="" />
 					<p>pour avoir une mise a joure reguliere de données il faut automatiser le lancement des scripts des <a href="../html/elec.html">differents capteurs ou relais</a></p>
 					<p>nous allons donc taper la commande <code>crontab -e</code>pour acceder au crontab (parametre pour lancer des programes avec une recurence)</p>
@@ -86,16 +86,16 @@
 					<p>( <a href="https://www.domo-blog.fr/editer-la-crontab-du-raspberry/" target="_blank">ici pour avoir plus de documentation sur crontab</a>)</p>
 
                     <hr>
-                </div>
-			</div>
-			<div id="p22">
+                </article>
+			</article>
+			<article id="p22">
 				<header>
                     <h1 class="animated bounceInRight delay-2-5s" >sécurisation de l'accès <br>à la gestion</h1>
                 </header>
-                <div class="IDParagraph">
+                <article class="IDParagraph">
                     <img class="imageArticle animated bounceInRight delay-2-5s" src="../assets/images/securite.png" alt="" />
 					<p>tout ca est bien beau mais pour ne pas que tout le monde puisse jouer avec votre serre nous allons mettre un mot de passe. pour se faire nous allons ajouter un <code> &#8249;form&#8250; </code>avec un espace pour mettre le mdp ainci qu'un bouton pour valider : </p>
-								<pre><code>&#8249;form action="secret.php" method="post"&#8250;
+					<pre><code>&#8249;form action="secret.php" method="post"&#8250;
 &#8249;p&#8250;
 &#8249;input type="password" name="mot_de_passe" /&#8250;
 &#8249;input type="submit" value="Valider" /&#8250;
@@ -103,7 +103,7 @@
 &#8249;/form&#8250; </code></pre>
 <p>ce programe redirige vers un programe secondaire "secret.php" qui contien la verrification du mot de passe </p>
 
-								<pre><code>&#8249;!DOCTYPE html&#8250;
+					<pre><code>&#8249;!DOCTYPE html&#8250;
 &#8249;html&#8250;
 	&#8249;head&#8250;
 		&#8249;title&#8250;Serre autonome By Victor Lerivray&#8249;/title&#8250;
@@ -132,18 +132,18 @@
         
     &#8249;/body&#8250;
 &#8249;/html&#8250;
-							</code></pre>
-                </div>
-            </div>
-			</div>
-		</div>
+					</code></pre>
+                </article>
+            </article>
+		</section>
+	</section>
 	<nav id="sideBar" class="sideBar">
-		<div id="search" >
+		<article id="search" >
 			<form method="post" action="#">
                 <input type="text" placeholder="Search" />
 			</form>
 			
-		</div>
+		</article>
 		<header>
                 <h2>Menu</h2>
         </header>
@@ -156,7 +156,7 @@
 		<img class="MenuIcon" src="../assets/images/menu2.png" alt="" onclick="document.getElementsByClassName('sideBar')[0].classList.toggle('collapsed')"/>
 
         <hr>
-        <div id="contact">
+        <article id="contact">
 			<h2>Contact</h2>
 			<table>
 				<tr>
@@ -172,7 +172,7 @@
 					<td>10b rue de la grace de dieu<br>14123, fleury-sur-orne</td>
 				</tr>
 			</table>
-		</div>
+		</article>
         <footer>
 			<p>&copy; 2019. All rights reserved. Design by lerivray Victor.</p>
 		</footer>
