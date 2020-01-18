@@ -15,7 +15,7 @@ travailliez sur une thématique qui vous intéresse.
 
 Le Projet est disponnible sur GitHub a l'adresse : 	https://github.com/victorL73/Projet_Web
 
-Le fichier principale est `index.html` est situer a la racine.
+Le fichier principale est `index.html` est situer a la racine il contien du language JavaScript qui n'est pas demander dans ce projet, mais cette page est uniquement decorative et n'influe en aucun cas sur la suite du site.
 
 vous pourez aussi retrouver les fichiers html et leur css associer : 
 
